@@ -47,10 +47,9 @@ public class inter
     public static void main(String args[])
     {
         int ch;
-        
+        Scanner obj=new Scanner(System.in);
         do{
             System.out.println("Choose a shape\n1. Circle \n2.Rectangle \n3. Exit");
-            Scanner obj=new Scanner(System.in);
             ch=obj.nextInt();
             switch(ch)
             {
@@ -84,5 +83,6 @@ public class inter
                 }
             }
         }while(ch!=3);
+      obj.close();
     }
 }
