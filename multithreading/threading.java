@@ -9,7 +9,7 @@ class fibThread implements Runnable
     public void run()
     {
         int a=0, b=1;
-        System.out.println("Fibonacci : "+a+" "+b);
+        System.out.print("Fibonacci : "+a+" "+b);
         for(int i=2; i<n; i++)
         {
             int next=a+b;
@@ -30,7 +30,7 @@ class evenThread implements Runnable
     }
     public void run()
     {
-        System.out.println("Even numbers are : ");
+        System.out.print("Even numbers are : ");
         for(int i=2; i<=n; i+=2)
         {
                 System.out.print(" "+i);  
@@ -56,5 +56,4 @@ public class threading {
         even.start();
         obj.close();
     }
-   
 }
