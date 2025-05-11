@@ -82,5 +82,6 @@ public class GenStack {
                 }
             }
         }while(ch!=4);
+        obj.close();
     }
 }
