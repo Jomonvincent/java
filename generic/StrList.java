@@ -58,12 +58,14 @@ public class StrList {
                 }
                 case 5:
                 {
-                    System.out.println("exiting program ");
+                    System.out.println("exiting program.... ");
+                    obb.close();
                     break;
                 }
                 default:
                     System.out.println("Invalid input ");
             }
         }while(ch!=5);
+        
     }
 }
