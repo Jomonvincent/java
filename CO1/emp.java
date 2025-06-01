@@ -48,5 +48,7 @@ public class emp
         }
         if(!found)
             System.out.println("Employee not found");
+        obj.close();
+
     }
 }

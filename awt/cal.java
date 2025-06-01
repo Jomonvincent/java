@@ -52,7 +52,8 @@ class cal extends Frame implements ActionListener {
             {
                 tf.setText("Error");
             }
-        } else if (command.equals("+") || command.equals("-") || command.equals("*") || command.equals("/")) {
+        } 
+        else if (command.equals("+") || command.equals("-") || command.equals("*") || command.equals("/")) {
             try 
             {
                 num1 = Double.parseDouble(tf.getText());

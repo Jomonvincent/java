@@ -11,11 +11,12 @@ class GenericStack<T>
     }
     public T pop()
     {
-        if(!stack.isEmpty())
+        if(stack.isEmpty())
         {
-            return stack.pop();
+            throw new EmptyStackException();
         }
-        throw new EmptyStackException();
+        return stack.pop();
+
     }
     public void display()
     {

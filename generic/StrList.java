@@ -35,8 +35,7 @@ public class StrList {
                 {
                     System.out.print("Enter the string to search : ");
                     String ser_item=obb.nextLine();
-                    strlist.contains(ser_item);
-                    if(strlist.remove(ser_item))
+                    if(strlist.contains(ser_item))
                         System.out.println(ser_item+" found in list");
                     else
                         System.out.println(ser_item+" not found in list");
