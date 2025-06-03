@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//imginary number addition in a complex time wasting way
+//imginary number addition in a complex,time wasting way
 
 class imaginary
 {
@@ -26,14 +26,17 @@ public class img
         for(int k=0;k<2;k++)
         {
             System.out.println("Enter the real part of the no :");
-            int i=obb.nextInt();
+            int r=obb.nextInt();
             obb.nextLine();
             System.out.println("Enter the imaginary part of the no :");
-            int r=obb.nextInt();
+            int i=obb.nextInt();
             n[k]=new imaginary(r,i);
         }
         imaginary result=imaginary.add(n[0],n[1]);
-        System.out.println(result.r+"+"+result.i);
+        if(result.i>0)
+            System.out.println(result.r+"+"+result.i+"i");
+        else
+            System.out.println(result.r+""+result.i+"i");
         obb.close();
     }
 }
