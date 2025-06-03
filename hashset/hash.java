@@ -44,5 +44,6 @@ public class hash
         {
             System.out.println(str);
         }
+        obj.close();
     }
 }

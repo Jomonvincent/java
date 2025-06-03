@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 class Shapes
 {
     int area(int n)
@@ -41,7 +40,7 @@ public class over
         int h=obj.nextInt();
         System.out.println("Enter the bredth of th trianlge");
         int b=obj.nextInt();
-        System.out.println("area of the square :"+shape.area(l,b,true));
+        System.out.println("area of the square :"+shape.area(h,b,true));
 
         System.out.println("Enter the radius of th circle");
         double r=obj.nextInt();
