@@ -53,6 +53,7 @@ public class mydq
                 default:
                     System.out.println("Invalid input ,enter a valid integer");
             }
+        obj.close();
         } 
     }
 }

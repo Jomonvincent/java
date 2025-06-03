@@ -29,44 +29,51 @@ class cal extends Frame implements ActionListener {
                 y += 50;
             }
         }
-
+        
         // Set Frame properties
         setSize(300, 400);
         setLayout(null);
         setVisible(true);
+
+        addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
+                dispose();
+            }
+        });
     }
 
-    public void actionPerformed(ActionEvent e) 
-    {
+    public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
-        
-        if (command.equals("=")) 
-        {	
-            try 
-            {
-                num2 = Double.parseDouble(tf.getText());
-                double result = performCalculation(num1, num2, operator);
+
+        if (command.equals("=")) {
+            try {
+                String expression = tf.getText();
+                double result = evaluateExpression(expression); // Extract and compute
                 tf.setText(String.valueOf(result));
-            } 
-            catch (NumberFormatException ex) 
-            {
-                tf.setText("Error");
-            }
-        } 
-        else if (command.equals("+") || command.equals("-") || command.equals("*") || command.equals("/")) {
-            try 
-            {
-                num1 = Double.parseDouble(tf.getText());
-                operator = command;
-                tf.setText(""); // Clear input field for next number
-            } 
-            catch (NumberFormatException ex) 
-            {
+            } catch (Exception ex) {
                 tf.setText("Error");
             }
         } else {
-            tf.setText(tf.getText() + command); // Append number input
+            tf.setText(tf.getText() + command); // Append to text field
         }
+    }
+
+    private double evaluateExpression(String expression) {
+        for (String op : operators) {
+            int index = expression.indexOf(op); // Find operator position
+            if (index > 0) {
+                try {
+                    double num1 = Double.parseDouble(expression.substring(0, index));
+                    double num2 = Double.parseDouble(expression.substring(index + 1));
+                    return performCalculation(num1, num2, op);
+                } catch (NumberFormatException e) {
+                    return Double.NaN;
+                }
+            }
+        }
+        return Double.NaN;
     }
 
     private double performCalculation(double num1, double num2, String operator) {
